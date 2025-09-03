@@ -20,9 +20,9 @@ class CsvToJsonConverter {
         $rows = [];
         $rowCount = 0;
         if( ( $file = fopen($inputFilename, 'rb') ) !== false ) {
-            $header = fgetcsv($file);
+            $header = fgetcsv($file, escape: '');
             $headerCount = count($header);
-            while( ( $row = fgetcsv($file) ) !== false ) {
+            while( ( $row = fgetcsv($file, escape: '') ) !== false ) {
                 $colCount = count($row);
                 if( $colCount === $headerCount ) {
                     $entry = array_combine($header, $row);
@@ -72,7 +72,7 @@ class CsvToJsonConverter {
     }
 
     private function normalizeName(string $firstName, string $lastName): string {
-        return $firstName . ' ' . $lastName;
+        return trim($firstName . ' ' . $lastName);
     }
 
 }
