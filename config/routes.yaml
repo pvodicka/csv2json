@@ -1,0 +1,5 @@
+# $schema: ../vendor/symfony/routing/Loader/schema/routing.schema.json
+
+controllers:
+    resource: attributes
+    type: tagged_services
