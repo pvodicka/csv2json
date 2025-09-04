@@ -18,7 +18,7 @@ final class CsvToJsonConverterTest extends TestCase
             'Last name' => 'Wonder',
             'email' => 'alice@example.com',
             'password' => 's3cr3t',
-            'status' => '0', // should map to JsonUser::ACTIVE
+            'status' => '1', // should map to JsonUser::ACTIVE
         ];
 
         $converter = new CsvToJsonConverter();

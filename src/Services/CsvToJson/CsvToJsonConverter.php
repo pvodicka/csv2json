@@ -65,8 +65,8 @@ class CsvToJsonConverter {
 
     private function normalizeStatus(string $status): ?string {
         return match ( $status ) {
-            '0' => JsonUser::ACTIVE,
-            '1' => JsonUser::INACTIVE,
+            '1' => JsonUser::ACTIVE,
+            '2' => JsonUser::INACTIVE,
             default => null,
         };
     }
